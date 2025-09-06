@@ -19,7 +19,7 @@ models_folder = Path('models')
 models_folder.mkdir(exist_ok=True)
 
 
-
+#ingestion and feature engineering
 def read_dataframe(year, month):
     url = f'https://d37ci6vzurychx.cloudfront.net/trip-data/green_tripdata_{year}-{month:02d}.parquet'
     df = pd.read_parquet(url)
@@ -50,7 +50,7 @@ def create_X(df, dv=None):
 
     return X, dv
 
-
+#train xgboost model
 def train_model(X_train, y_train, X_val, y_val, dv):
     with mlflow.start_run() as run:
         train = xgb.DMatrix(X_train, label=y_train)
