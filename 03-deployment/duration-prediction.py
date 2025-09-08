@@ -36,7 +36,7 @@ def read_dataframe(year, month):
 
     return df
 
-
+#encode data and dict vectorizer
 def create_X(df, dv=None):
     categorical = ['PU_DO']
     numerical = ['trip_distance']
