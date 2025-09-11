@@ -46,7 +46,7 @@ def create_X(df:pd.DataFrame, dv=None):
         X = dv.fit_transform(dicts)
     else:
         X = dv.transform(dicts)
-    print(f"[4] Records after filtering: {len(X)}")
+    print(f"[4] Data has been tranformed and encoded")
     return X, dv
 
 @task
