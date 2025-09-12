@@ -88,7 +88,8 @@ def train_model(X_train, y_train, X_val, y_val, dv):
         mlflow.log_metric("rmse", rmse)
 
         with open("models/preprocessor.b", "wb") as f_out:
-            pickle.dump(dv, f_out)
+            pickle.dump((dv, booster), f_out)
+
         mlflow.log_artifact("models/preprocessor.b", artifact_path="preprocessor")
 
         mlflow.xgboost.log_model(booster, artifact_path="model")
