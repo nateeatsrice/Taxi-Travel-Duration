@@ -31,13 +31,13 @@ Assuming that MLFlow is also running, it is now possible to run the script and o
 
 Go to Prefect UI and create a new work pool. The type to select is "Process", since it's the most basic option.
 
-Deploy the flow with the following command: `uv run prefect deploy duration-prediction.py:run -n nyc-taxi-flow -p "Work Pool 1"`.
+Deploy the flow with the following command: `uvx prefect deploy duration-prediction.py:run -n nyc-taxi-flow -p "Work Pool 1"`.
 
 -n specifies the deployment name, -p specifies the work pool where the deployment should run
 
 A work pool is basically the execution environment (workers or agents) that listen for deployments
 
-To execute flow runs, we'll need to start a worker: `uv run prefect worker start --pool "Work Pool 1"`.
+To execute flow runs, we'll need to start a worker: `uvx prefect worker start --pool "Work Pool 1"`.
 
 And then it is possible to run the deployment either from the command line (`prefect deployment run) or from the UI.
 
