@@ -3,7 +3,7 @@ import requests
 url = 'http://localhost:9698/predict'
 
 ride = {
-    "PU_DO":"9_14",
+    "PU_DO": "9_14",
     "trip_distance": 12.0
 }
 
@@ -16,4 +16,7 @@ response = requests.post(url, json=ride)
 
 predictions = response.json()
 
-print(f'estimated ride time: {predictions['duration_prediction']}')
+print("Status code:", response.status_code)
+print("Response text:", response.text)  # <--- debug
+
+# print(f'estimated ride time: {predictions['duration_prediction']}')
