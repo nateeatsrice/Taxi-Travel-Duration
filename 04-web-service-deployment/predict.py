@@ -2,11 +2,10 @@
 # coding: utf-8
 
 import pickle
-
 from pydantic import BaseModel, Field
-
 from fastapi import FastAPI
 import uvicorn
+import xgboost as xgb
 
 #defining required input datatypes for model
 class Request(BaseModel):
@@ -26,14 +25,15 @@ with open('./preprocessor.b','rb') as f_in:
 
 # the actual potato and meat 
 def predict_duration(ride, dv, booster) -> float:
-    X = dv.transform([ride])
-    duration = booster.predict(X)
+    X = dv.fit_transform(ride)
+    Xgb = xgb.DMatrix(X)
+    duration = booster.predict(Xgb)
     return float(duration)
 
 @app.post("/predict")
 
-def predict(distance:Request) -> Response:
-    time = predict_duration(distance.model_dump(),dv=dv,booster=booster)
+def predict(ride:Request) -> Response:
+    time = predict_duration(ride.model_dump(),dv=dv,booster=booster)
 
     return Response(
         duration_prediction=time
