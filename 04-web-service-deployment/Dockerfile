@@ -1,5 +1,5 @@
 # Use the official Python 3.13.5 slim version based on Debian Bookworm as the base image
-FROM python:3.13.5-slim-bookworm
+FROM python:3.12.11-slim-bookworm
 
 # Copy the 'uv' and 'uvx' executables from the latest uv image into /bin/ in this image
 # 'uv' is a fast Python package installer and environment manager
@@ -22,7 +22,7 @@ COPY ["pyproject.toml", "uv.lock", ".python-version", "./"]
 RUN uv sync --locked
 
 # Copy application code and model data into the container
-COPY ["deployment.py", "log_reg.bin", "./"]
+COPY ["server.py", "preprocessor.b", "./"]
 
 # Expose TCP port 9698 so it can be accessed from outside the container
 EXPOSE 9698
@@ -31,4 +31,4 @@ EXPOSE 9698
 # predict:app → refers to 'app' object inside predict.py
 # --host 0.0.0.0 → listen on all interfaces
 # --port 9698    → listen on port 9698
-ENTRYPOINT ["uvicorn", "deployment:app", "--host", "0.0.0.0", "--port", "9698"]
+ENTRYPOINT ["uvicorn", "server:app", "--host", "0.0.0.0", "--port", "9698"]
