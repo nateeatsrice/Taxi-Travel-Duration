@@ -7,6 +7,8 @@ from fastapi import FastAPI
 import uvicorn
 import xgboost as xgb
 
+model_id = "m-1eddcaffeaae4213b6975dc9ceac2e5d"
+
 #defining required input datatypes for model
 class Request(BaseModel):
     PU_DO: str
