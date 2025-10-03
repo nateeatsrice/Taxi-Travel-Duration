@@ -1,7 +1,7 @@
 [project]
-name = "04-deployment"
+name = "mlops-environment"
 version = "0.1.0"
-description = "Add your description here"
+description = "requirements for uv environment"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
@@ -12,4 +12,7 @@ dependencies = [
     "uvicorn>=0.35.0",
     "requests>=2.32.5",
     "xgboost>=3.0.5",
+    "boto3>=1.40.42",
+    "psycopg2-binary>=2.9.10",
+    "dotenv>=0.9.9",
 ]
