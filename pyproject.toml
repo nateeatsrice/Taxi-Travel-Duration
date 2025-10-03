@@ -15,4 +15,7 @@ dependencies = [
     "boto3>=1.40.42",
     "psycopg2-binary>=2.9.10",
     "dotenv>=0.9.9",
+    "pandas>=2.3.3",
+    "mlflow>=3.4.0",
+    "hyperopt>=0.2.7",
 ]
