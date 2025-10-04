@@ -3,21 +3,22 @@ name = "mlops-environment"
 version = "0.1.0"
 description = "requirements for uv environment"
 readme = "README.md"
-requires-python = ">=3.12"
+requires-python = "==3.12.1"
 dependencies = [
-    "fastapi>=0.116.1",
-    "pydantic>=2.11.7",
-    "scikit-learn>=1.7.1",
-    "typing>=3.10.0.0",
-    "uvicorn>=0.35.0",
-    "requests>=2.32.5",
-    "xgboost>=3.0.5",
-    "boto3>=1.40.42",
-    "psycopg2-binary>=2.9.10",
-    "dotenv>=0.9.9",
-    "pandas>=2.3.3",
-    "mlflow>=3.4.0",
-    "hyperopt>=0.2.7",
-    "seaborn>=0.13.2",
-    "matplotlib>=3.10.6",
+    "fastapi==0.116.1",
+    "pydantic==2.11.7",
+    "scikit-learn==1.7.1",
+    "typing==3.10.0.0",
+    "uvicorn==0.35.0",
+    "requests==2.32.5",
+    "xgboost==3.0.5",
+    "boto3==1.40.42",
+    "psycopg2-binary==2.9.10",
+    "dotenv==0.9.9",
+    "pandas==2.3.3",
+    "mlflow==3.4.0",
+    "hyperopt==0.2.7",
+    "seaborn==0.13.2",
+    "matplotlib==3.10.6",
+    "setuptools==80.9.0",
 ]
