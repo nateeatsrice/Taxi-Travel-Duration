@@ -18,4 +18,6 @@ dependencies = [
     "pandas>=2.3.3",
     "mlflow>=3.4.0",
     "hyperopt>=0.2.7",
+    "seaborn>=0.13.2",
+    "matplotlib>=3.10.6",
 ]
